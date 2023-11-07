@@ -8,7 +8,9 @@ const server = createServer((req, res) => {
   const { url, method } = req;
   if (url === "/" && method === "GET") {
     res.setHeader("Content-Type", "text/html");
-    const readStream = createReadStream(join(__dirname, "../public/index.html"));
+    const readStream = createReadStream(
+      join(__dirname, "../public/index.html")
+    );
     readStream.pipe(res);
   } else {
     res.setHeader("Content-Type", "text/html");
